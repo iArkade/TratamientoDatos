@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Resultados de la busqueda</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Resultados de la busqueda</h1>
+
+    <form action="/search" method="GET">
+        <input type="text" name="query" placeholder="Ingrese su consulta de busqueda">
+        <input type="submit" value="Buscar">
+    </form>
+    
+    <br>
+
+    {% if laptops %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for laptop in laptops %}
+                    <tr>
+                        <td>{{ laptop["titulo"] }}</td>
+                        <td>${{ laptop["precio"] }}</td>
+                        <td>{{ laptop["descripcion"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No se encontraron resultados</p>
+    {% endif %}
+</body>
+</html>

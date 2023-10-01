@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Laptops</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Lista de Laptops</h1>
+    <a href="/search" type="button" style="background-color: #3f69a7; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border: none; cursor: pointer;">Buscar</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for laptop in laptops %}
+            <tr>
+                <td>{{ laptop["titulo"] }}</td>
+                <td>${{ laptop["precio"] }}</td>
+                <td>{{ laptop["descripcion"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
