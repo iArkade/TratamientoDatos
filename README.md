@@ -60,7 +60,7 @@ Run `main.py`
 python3 main.py
 ```
 
-## Step 4
+### Step 4
 
 Check mongo results
 
